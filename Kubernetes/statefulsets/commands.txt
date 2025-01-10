@@ -1,0 +1,31 @@
+1  minikube start --driver=docker
+    2  kubectl get nnodes
+    3  kubectl get nodes
+    4  kubectl create ns myspace
+    5  clear
+    6  kubectl get ns
+    7  kubectl config set-context --current --namespace=myspace
+    8  clear
+    9  vi stateful.yml
+   10  vi service.yml
+   11  cat service.yml
+   12  kubectl apply -f stateful.yml
+   13  vi stateful.yml
+   14  nano stateful.yml
+   15  kubectl apply -f stateful.yml
+   16  kubectl get pods
+   17  kubectl get statefulsets
+   18  kubectl scale sts quarkus-statefulset --replicas 3
+   19  kubectl get events --sort-by=.metdata.creationTimestamp
+   20  kubectl get events --sort-by=.metdata.creationTimestamp --ns myspace
+   21  kubectl get events
+   22  clear
+   23  kubectl run -it --restart=Never --rm -=image busybox:1.28 test
+   24  kubectl run -it --restart=Never --rm --image busybox:1.28 test
+   25  kubectl get svc
+   26  kubectl apply -f service.yml
+   27  kubectl get svc
+   28  kubectl describe svc quarkus
+   29  kubectl run -it --restart=Never --rm -=image busybox:1.28 test
+   30  kubectl run -it --restart=Never --rm --image busybox:1.28 test
+   31  kubectl scale sts quarkus-statefulset --replicas 2

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: quarkus-statefulset
+  labels:
+    app: quarkus-statefulset
+spec:
+  serviceName: "quarkus"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: quarkus-statefulset
+  template:
+    metadata:
+      labels:
+        app: quarkus-statefulset
+    spec:
+      containers:
+      - name: quarkus-statefulset
+        image: quay.io/rhdevelopers/quarkus-demo:v1
+        ports:
+        - containerPort: 8080
+          name: web
