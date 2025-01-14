@@ -1,0 +1,23 @@
+    4  kubectl get nodes
+    5  kubectl get nodes --show-labels
+    6  clear
+    7  kubectl get nodes
+    8  kubectl label nodes node01 name=mempry
+    9  kubectl get nodes --show-labels
+   10  vi pod.yaml
+   11  kubectl label nodes node01 name=memory
+   12  kubectl label nodes node01 name=memory --overwrite true
+   13  kubectl label nodes node01 type=memory --overwrite true
+   14  kubectl label nodes node01 type=memory 
+   15  vi pod.yaml 
+   16  clear
+   17  kubectl apply -f pod.yaml 
+   18  kubeclt get pods -o wide
+   19  kubectl get pods -o wide
+   20  kubectl get nodes --show-labels
+   21  kubectl label nodes controlplane type=control
+   22  kubectl label nodes node01 type=control7
+   23  kubectl get pods --show-labels
+   24  kubectl label pods with-node-affinity name=pod1
+   25  kubectl label pods with-node-affinity3 name=pod2
+   26  kubectl get pods -o wide

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-pod-affinity2
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: name
+            operator: In
+            values:
+            - pod1
+        topologyKey: beta.kubernetes.io/os
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: env
+              operator: In
+              values:
+              - test
+          topologyKey: beta.kubernetes.io/os
+  containers:
+  - name: with-pod-affinity
+    image: registry.k8s.io/pause:3.8
