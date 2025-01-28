@@ -8,8 +8,7 @@
     8  clear
     9  vi stateful.yml
    10  vi service.yml
-   11  cat service.yml
-   12  kubectl apply -f stateful.yml
+   11  cat service.ymlkl2  kubectl apply -f stateful.yml
    13  vi stateful.yml
    14  nano stateful.yml
    15  kubectl apply -f stateful.yml
