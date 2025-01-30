@@ -27,27 +27,35 @@
 
 # Deploy Ec2 instance using Modules
 
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  name = var.instance_name
-  instance_type          = "t2.micro"
+# module "ec2_instance" {
+#   source  = "terraform-aws-modules/ec2-instance/aws"
+#   name = var.instance_name
+#   instance_type          = "t2.micro"
 
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
-}
+#   tags = {
+#     Terraform   = "true"
+#     Environment = "dev"
+#   }
+# }
 
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  name = var.instance_name
-  instance_type          = "t2.micro"
-  providers = {
-    aws = aws.west
-  }
+# module "ec2_instance" {
+#   source  = "terraform-aws-modules/ec2-instance/aws"
+#   name = var.instance_name
+#   instance_type          = "t2.micro"
+#   providers = {
+#     aws = aws.west
+#   }
 
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
+#   tags = {
+#     Terraform   = "true"
+#     Environment = "dev"
+#   }
+# }
+
+module "my_instance" {
+
+  source = "./modules/ec2-instance"
+  instance_name = "new_instance"
+  instance_type = "t2.small"
+  
 }
